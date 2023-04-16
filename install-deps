@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=dependencies/DeviationUpload-0.9.0-dependencies.jar -DgroupId=deviation -DartifactId=deviation-dependencies -Dversion=0.9.0 -Dpackaging=jar
