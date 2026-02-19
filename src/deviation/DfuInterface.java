@@ -24,7 +24,11 @@ public class DfuInterface {
             StringBuffer name = new StringBuffer();
             LibUsb.getStringDescriptorAscii(handle, intf.iInterface(), name, MAX_DESC_STR_LEN);
             LibUsb.close(handle);
-            memory = new DfuMemory(name.toString());
+            System.out.println(name.toString());
+            if (name.toString().equals("Camera DFU Device"))
+              memory = new DfuMemory(null);
+            else
+              memory = new DfuMemory(name.toString());
         } else {
             memory = new DfuMemory(null);
         }
