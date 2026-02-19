@@ -255,6 +255,8 @@ public class DeviationUploadGUI {
                 public Object getValueAt(int row, int col) {
                     DfuMemory mem = devMemory.get(row);
                     Sector sector = mem.find((int)mem.findStartingAddress());
+                    if (sector == null)
+                            return "";
                     switch(col) {
                     case 0: return mem.name();
                     case 1: return String.format("0x%08x", sector.start());
